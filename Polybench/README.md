@@ -18,4 +18,4 @@ powers64(1):
 	
 	
 	
---> Execute extract.ipynb in each file to get the extracted power values and plots that are directed to Powers directory (The computed results are already stored there)
+--> Execute extract.ipynb in each of the above to get the extracted power values and plots that are directed to Powers directory (The computed results are already stored there)
