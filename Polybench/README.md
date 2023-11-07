@@ -19,3 +19,9 @@ powers64(1):
 	
 	
 --> Execute extract.ipynb in each of the above to get the extracted power values and plots that are directed to Powers directory (The computed results are already stored there)
+
+
+--> Final data regarding Powers is stored in Powers directory
+
+
+--> Final data regarding Time taken is stored in Times/Data-plots directory
