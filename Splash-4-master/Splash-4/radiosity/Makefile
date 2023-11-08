@@ -9,12 +9,12 @@ include ../../Makefile.config
 
 CFLAGS := $(CFLAGS) -I./glibdumb -I./glibps
 
-#CCOPTS = -I -float -I/usr/include $(CFLAGS)
-#LDFLAGS = -lm -lpthread
+CCOPTS = -I -float -I/usr/include $(CFLAGS)
+LDFLAGS = -lm -lpthread
 #CFLAGS = $(CINCLUDE) -O4 -march=i686 -mcpu=i686 -malign-double -funroll-loops -finline-functions -fomit-frame-pointer -D_REENTRANT
-#CINCLUDE = -I$(GLIBDIR) -I./glibps
+CINCLUDE = -I$(GLIBDIR) -I./glibps
 
-LOADLIBES = glibdumb/glib.a glibps/glibps.a
+LOADLIBES = glibdumb/glib.a glibps/glibps.a glibdumb/glib.h
 
 $(TARGET): $(OBJS) $(LOADLIBES)
 	$(CC) $(OBJS) $(CFLAGS) $(LOADLIBES) -o $(TARGET) $(LDFLAGS)
