@@ -266,7 +266,7 @@ int main (int argc, string argv[])
 
    CLOCK(Global->computestart);
 
-   printf("COMPUTESTART  = %12lu\n",Global->computestart);
+   // printf("COMPUTESTART  = %12lu\n",Global->computestart);
 
    SPLASH4_ROI_BEGIN();
    CREATE(SlaveStart, NPROC);
@@ -275,8 +275,9 @@ int main (int argc, string argv[])
    
    CLOCK(Global->computeend);
 
-   printf("COMPUTEEND    = %12lu\n",Global->computeend);
-   printf("COMPUTETIME   = %12lu\n",Global->computeend - Global->computestart);
+   // printf("COMPUTEEND    = %12lu\n",Global->computeend);
+   printf("%lu\n",Global->computeend - Global->computestart);
+   /*
    printf("TRACKTIME     = %12lu\n",Global->tracktime);
    printf("PARTITIONTIME = %12lu\t%5.2f\n",Global->partitiontime,
 	  ((float)Global->partitiontime)/Global->tracktime);
@@ -290,6 +291,7 @@ int main (int argc, string argv[])
 	  ((float)(Global->tracktime-Global->partitiontime-
 		   Global->treebuildtime-Global->forcecalctime))/
 	  Global->tracktime);
+     */
    MAIN_END;
 }
 

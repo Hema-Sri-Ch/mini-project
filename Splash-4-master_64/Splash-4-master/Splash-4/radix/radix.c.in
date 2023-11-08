@@ -238,6 +238,7 @@ int main(int argc, char *argv[])
 
    global->Index = 0;
    max_num_digits = get_max_digits(max_key);
+   /*
    printf("\n");
    printf("Integer Radix Sort\n");
    printf("     %ld Keys\n",num_keys);
@@ -245,7 +246,7 @@ int main(int argc, char *argv[])
    printf("     Radix = %ld\n",radix);
    printf("     Max key = %ld\n",max_key);
    printf("\n");
-
+  */
    quotient = num_keys / number_of_processors;
    remainder = num_keys % number_of_processors;
    sum_i = 0;
@@ -315,7 +316,7 @@ int main(int argc, char *argv[])
 
    CREATE(slave_sort, number_of_processors);
    WAIT_FOR_END(number_of_processors);
-
+  /*
    printf("\n");
    printf("                 PROCESS STATISTICS\n");
    printf("               Total            Rank            Sort\n");
@@ -323,6 +324,7 @@ int main(int argc, char *argv[])
    printf("    0     %10.0f      %10.0f      %10.0f\n",
            global->totaltime[0],global->ranktime[0],
            global->sorttime[0]);
+  */
    if (dostats) {
      maxt = avgt = mint = global->totaltime[0];
      maxrank = avgrank = minrank = global->ranktime[0];
@@ -366,8 +368,9 @@ int main(int argc, char *argv[])
 
    SPLASH4_ROI_END();
 
-   printf("\n");
+   // printf("\n");
    global->starttime = start;
+   /*
    printf("                 TIMING INFORMATION\n");
    printf("Start time                        : %16lu\n",
            global->starttime);
@@ -375,12 +378,14 @@ int main(int argc, char *argv[])
            global->rs);
    printf("Overall finish time               : %16lu\n",
            global->rf);
-   printf("Total time with initialization    : %16lu\n",
+    */
+   printf("%lu\n",
            global->rf-global->starttime);
+  /*
    printf("Total time without initialization : %16lu\n",
            global->rf-global->rs);
    printf("\n");
-
+  */
    if (doprint) {
      printout();
    }

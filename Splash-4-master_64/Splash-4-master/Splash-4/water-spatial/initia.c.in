@@ -71,7 +71,7 @@ void INITIA()
         double ZERO = XS * 0.50;
         double WCOS = ROH * cos(ANGLE * 0.5);
         double WSIN = ROH * sin(ANGLE * 0.5);
-
+        /*
         printf("\nNS = %.16f\n",NS);
         printf("BOXL = %10f\n",BOXL);
         printf("CUTOFF = %10f\n",CUTOFF);
@@ -81,6 +81,7 @@ void INITIA()
         printf("ZERO = %g\n",ZERO);
         printf("WCOS = %f\n",WCOS);
         printf("WSIN = %f\n",WSIN);
+        */
         fflush(stdout);
 
 #ifdef RANDOM
@@ -222,7 +223,7 @@ void INITIA()
            since random does not necessarily make sense from the viewpoint
            of preserving bond distances */
 
-        fprintf(six, "***** NEW RUN STARTING FROM REGULAR LATTICE *****\n");
+        // fprintf(six, "***** NEW RUN STARTING FROM REGULAR LATTICE *****\n");
         fflush(six);
         XT[2] = ZERO;
         mol = 0;

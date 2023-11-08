@@ -252,7 +252,7 @@ int main(int argc, char *argv[])
             CLOCK( time_rad_end );
 
             /* Print out running time */
-            printf("TIMING STATISTICS MEASURED BY MAIN PROCESS:\n");
+            // printf("TIMING STATISTICS MEASURED BY MAIN PROCESS:\n");
 
             print_running_time(0);
 

@@ -77,11 +77,13 @@ void inputdata ()
 
 void initoutput()
 {
+   /*
    printf("\n\t\t%s\n\n", headline);
    printf("%10s%10s%10s%10s%10s%10s%10s%10s\n",
 	  "nbody", "dtime", "eps", "tol", "dtout", "tstop","fcells","NPROC");
    printf("%10ld%10.5f%10.4f%10.2f%10.3f%10.3f%10.2f%10ld\n\n",
 	  nbody, dtime, eps, tol, dtout, tstop, fcells, NPROC);
+   */
 }
 
 /*

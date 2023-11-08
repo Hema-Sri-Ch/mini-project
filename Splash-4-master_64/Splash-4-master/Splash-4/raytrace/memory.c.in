@@ -1088,7 +1088,7 @@ VOID	ma_print()
 
 	maxmem_total  = maxmem_grid + maxmem_hashtable + maxmem_emptycells;
 	maxmem_total += maxmem_voxel + maxmem_bintree;
-
+	/*
 	fprintf(stdout, "\n****** Hierarchial uniform grid memory allocation summary ******* \n\n");
 	fprintf(stdout, "     < struct >:            < current >   < maximum >    < sizeof > \n");
 	fprintf(stdout, "     <  bytes >:             <  bytes >   <   bytes >    <  bytes > \n\n");
@@ -1100,5 +1100,6 @@ VOID	ma_print()
 
 	fprintf(stdout, "\n");
 	fprintf(stdout, "     Totals:              %11ld   %11ld      \n\n", mem_total,       maxmem_total);
+	*/
 	}
 

@@ -118,12 +118,13 @@ void CreateBlockedMatrix2(SMatrix M, long block_ub, long *T, long *firstchild, l
   LB.mapJ = (long *) MyMalloc(LB.n_partitions*sizeof(long), DISTRIBUTED);
   for (i=0; i<LB.n_partitions; i++)
     LB.mapI[i] = LB.mapJ[i] = i;
+  /*
   printf("No redistribution\n");
 
   printf("Supers: "); DumpSizes(LB, domain, node);
   printf("Blocks: "); DumpSizes(LB, domain, LB.partition_size);
   printf("%ld partitions\n", LB.n_partitions);
-
+  */
   structure = (long *) malloc(M.n*sizeof(long));
   nz = (long *) malloc(M.n*sizeof(long));
   for (i=0; i<M.n; i++)
@@ -166,7 +167,7 @@ void CreateBlockedMatrix2(SMatrix M, long block_ub, long *T, long *firstchild, l
   for (j=0; j<LB.n_domains; j++)
     LB.n_blocks += (LB.col[LB.n+j+1]-LB.col[LB.n+j]);
 
-  printf("%ld partitions, %ld blocks\n", LB.n_partitions, LB.n_blocks);
+  // printf("%ld partitions, %ld blocks\n", LB.n_partitions, LB.n_blocks);
 
   /* now allocate storage for blocks and fill in simple info */
   blocks = (Block *) MyMalloc(LB.n_blocks*sizeof(Block), DISTRIBUTED);
@@ -679,7 +680,7 @@ void FindMachineDimensions(long P)
   }
 
   P_dimi = div; P_dimj = try;
-  printf("Processor array is %ld by %ld\n", P_dimi, P_dimj);
+  // printf("Processor array is %ld by %ld\n", P_dimi, P_dimj);
 }
 
 

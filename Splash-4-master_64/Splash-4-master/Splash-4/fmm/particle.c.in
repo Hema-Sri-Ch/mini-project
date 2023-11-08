@@ -100,8 +100,8 @@ CreateDistribution (cluster_type cluster, model_type model)
 	 printf("particles\n");
 	 break;
        case PLUMMER:
-	 printf("Creating a two cluster, non uniform distribution for %ld ", Total_Particles);
-	 printf("particles\n");
+	 // printf("Creating a two cluster, non uniform distribution for %ld ", Total_Particles);
+	 // printf("particles\n");
 	 break;
       }
       break;

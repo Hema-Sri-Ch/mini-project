@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
   }
 
   MAIN_INITENV(,150000000)
-
+  /*
   printf("\n");
   printf("Blocked Dense LU Factorization\n");
   printf("     %ld by %ld Matrix\n",n,n);
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
   printf("     %ld by %ld Element Blocks\n",block_size,block_size);
   printf("\n");
   printf("\n");
-
+  */
   num_rows = (long) sqrt((double) P);
   for (;;) {
     num_cols = P/num_rows;
@@ -279,6 +279,7 @@ int main(int argc, char *argv[])
     avg_mod = avg_mod/P;
     avg_bar = avg_bar/P;
   }
+  /*
   printf("                            PROCESS STATISTICS\n");
   printf("              Total      Diagonal     Perimeter      Interior       Barrier\n");
   printf(" Proc         Time         Time         Time           Time          Time\n");
@@ -286,6 +287,7 @@ int main(int argc, char *argv[])
           Global->completion[0],Global->t_in_fac[0],
           Global->t_in_solve[0],Global->t_in_mod[0],
           Global->t_in_bar[0]);
+  */
   if (dostats) {
     for (i=1; i<P; i++) {
       printf("  %3ld    %10.0f    %10.0f    %10.0f    %10.0f    %10.0f\n",
@@ -300,15 +302,17 @@ int main(int argc, char *argv[])
     printf("  Max    %10.0f    %10.0f    %10.0f    %10.0f    %10.0f\n",
            maxt,max_fac,max_solve,max_mod,max_bar);
   }
-  printf("\n");
+  // printf("\n");
   Global->starttime = start;
+  /*
   printf("                            TIMING INFORMATION\n");
   printf("Start time                        : %16lu\n", Global->starttime);
   printf("Initialization finish time        : %16lu\n", Global->rs);
   printf("Overall finish time               : %16lu\n", Global->rf);
-  printf("Total time with initialization    : %16lu\n", Global->rf-Global->starttime);
-  printf("Total time without initialization : %16lu\n", Global->rf-Global->rs);
-  printf("\n");
+  */
+  printf("%lu\n", Global->rf-Global->starttime);
+  // printf("Total time without initialization : %16lu\n", Global->rf-Global->rs);
+  // printf("\n");
 
   if (test_result) {
     printf("                             TESTING RESULTS\n");

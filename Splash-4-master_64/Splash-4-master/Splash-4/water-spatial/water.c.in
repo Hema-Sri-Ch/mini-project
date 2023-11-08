@@ -127,11 +127,11 @@ int main(int argc, char **argv)
     if (scanf("%lf%ld%ld%ld%ld%ld%ld%ld%ld%lf",&TSTEP, &NMOL, &NSTEP, &NORDER,
               &NSAVE, &NRST, &NPRINT, &NFMC,&NumProcs, &CUTOFF) != 10)
         fprintf(stderr,"ERROR: Usage: water < infile, which must have 10 fields, see SPLASH documentation or comment at top of water.C\n");
-
+    /*
     printf("Using %ld procs on %ld steps of %ld mols\n", NumProcs, NSTEP, NMOL);
     printf("Other parameters:\n\tTSTEP = %8.2e\n\tNORDER = %ld\n\tNSAVE = %ld\n",TSTEP,NORDER,NSAVE);
     printf("\tNRST = %ld\n\tNPRINT = %ld\n\tNFMC = %ld\n\tCUTOFF = %lf\n\n",NRST,NPRINT,NFMC,CUTOFF);
-
+    */
     /* set up scaling factors and constants */
 
     NORD1=NORDER+1;
@@ -140,16 +140,16 @@ int main(int argc, char **argv)
 
     SYSCNS();    /* sub. call to initialize system constants  */
 
-    printf("%ld boxes with %ld processors\n\n",
+    /* printf("%ld boxes with %ld processors\n\n",
            BOX_PER_SIDE * BOX_PER_SIDE * BOX_PER_SIDE, NumProcs);
-
+    */
     if (NumProcs > (BOX_PER_SIDE * BOX_PER_SIDE * BOX_PER_SIDE)) {
         fprintf(stderr,"ERROR: less boxes (%ld) than processors (%ld)\n",
                 BOX_PER_SIDE * BOX_PER_SIDE * BOX_PER_SIDE, NumProcs);
         fflush(stderr);
         exit(-1);
     }
-
+    /*
     fprintf(six,"\nTEMPERATURE                = %8.2f K\n",TEMP);
     fprintf(six,"DENSITY                    = %8.5f G/C.C.\n",RHO);
     fprintf(six,"NUMBER OF MOLECULES        = %8ld\n",NMOL);
@@ -159,6 +159,7 @@ int main(int argc, char **argv)
     fprintf(six,"NO. OF TIME STEPS          = %8ld \n",NSTEP);
     fprintf(six,"FREQUENCY OF DATA SAVING   = %8ld \n",NSAVE);
     fprintf(six,"FREQUENCY TO WRITE RST FILE= %8ld \n",NRST);
+    */
     fflush(six);
 
     { /* do memory initializations */
@@ -210,9 +211,10 @@ int main(int argc, char **argv)
             } /* while yprocs && k */
             j--;
         } /* while xprocs && j */
-
+        /*
         printf("xprocs = %ld\typrocs = %ld\tzprocs = %ld\n",
                xprocs, yprocs, zprocs);
+        */
         fflush(stdout);
 
         /* Fill in start_end array values */
@@ -225,8 +227,8 @@ int main(int argc, char **argv)
         x_left = BOX_PER_SIDE - (xprocs*x_inc);
         y_left = BOX_PER_SIDE - (yprocs*y_inc);
         z_left = BOX_PER_SIDE - (zprocs*z_inc);
-        printf("x_inc = %ld\t y_inc = %ld\t z_inc = %ld\n",x_inc,y_inc,z_inc);
-        printf("x_left = %ld\t y_left = %ld\t z_left = %ld\n",x_left,y_left,z_left);
+        // printf("x_inc = %ld\t y_inc = %ld\t z_inc = %ld\n",x_inc,y_inc,z_inc);
+        // printf("x_left = %ld\t y_left = %ld\t z_left = %ld\n",x_left,y_left,z_left);
         fflush(stdout);
 
 
@@ -315,7 +317,7 @@ int main(int argc, char **argv)
         LOCKINIT(gl->PotengSumLock);
     }
 
-    fprintf(six,"SPHERICAL CUTOFF RADIUS    = %8.4f ANGSTROM\n",CUTOFF);
+    // fprintf(six,"SPHERICAL CUTOFF RADIUS    = %8.4f ANGSTROM\n",CUTOFF);
     fflush(six);
 
     IRST=0;
@@ -346,17 +348,19 @@ int main(int argc, char **argv)
     WAIT_FOR_END(NumProcs);
     SPLASH4_ROI_END();
     CLOCK(gl->computeend);
-
+    /*
     printf("COMPUTESTART (after initialization) = %lu\n",gl->computestart);
     printf("COMPUTEEND = %lu\n",gl->computeend);
-    printf("COMPUTETIME (after initialization) = %lu\n",gl->computeend-gl->computestart);
+    */
+    printf("%lu\n",gl->computeend-gl->computestart);
+    /*
     printf("Measured Time (2nd timestep onward) = %lu\n",gl->tracktime);
     printf("Intramolecular time only (2nd timestep onward) = %lu\n",gl->intratime);
     printf("Intermolecular time only (2nd timestep onward) = %lu\n",gl->intertime);
     printf("Other time (2nd timestep onward) = %lu\n",gl->tracktime - gl->intratime - gl->intertime);
 
     printf("\nExited Happily with XTT = %g (note: XTT value is garbage if NPRINT > NSTEP)\n", XTT);
-
+    */
     MAIN_END;
 } /* main.c */
 

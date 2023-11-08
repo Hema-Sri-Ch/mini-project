@@ -127,11 +127,11 @@ int main(int argc, char **argv)
     if (NMOL > MAXLCKS) {
         fprintf(stderr, "Just so you know ... Lock array in global.H has size %ld < %ld (NMOL)\n code will still run correctly but there may be lock contention\n\n", MAXLCKS, NMOL);
     }
-
+    /*
     printf("Using %ld procs on %ld steps of %ld mols\n", NumProcs, NSTEP, NMOL);
     printf("Other parameters:\n\tTSTEP = %8.2e\n\tNORDER = %ld\n\tNSAVE = %ld\n",TSTEP,NORDER,NSAVE);
     printf("\tNRST = %ld\n\tNPRINT = %ld\n\tNFMC = %ld\n\tCUTOFF = %lf\n\n",NRST,NPRINT,NFMC,CUTOFF);
-
+    */
 
     /* SET UP SCALING FACTORS AND CONSTANTS */
 
@@ -212,7 +212,7 @@ int main(int argc, char **argv)
     }
 
     SYSCNS();    /* sub. call to initialize system constants  */
-
+    /*
     fprintf(six,"\nTEMPERATURE                = %8.2f K\n",TEMP);
     fprintf(six,"DENSITY                    = %8.5f G/C.C.\n",RHO);
     fprintf(six,"NUMBER OF MOLECULES        = %8ld\n",NMOL);
@@ -223,6 +223,7 @@ int main(int argc, char **argv)
     fprintf(six,"FREQUENCY OF DATA SAVING   = %8ld \n",NSAVE);
     fprintf(six,"FREQUENCY TO WRITE RST FILE= %8ld \n",NRST);
     fprintf(six,"SPHERICAL CUTOFF RADIUS    = %8.4f ANGSTROM\n",CUTOFF);
+    */
     fflush(six);
 
 
@@ -256,17 +257,19 @@ int main(int argc, char **argv)
     SPLASH4_ROI_END();
     CLOCK(gl->computeend);
 
-
+    /*
     printf("COMPUTESTART (after initialization) = %lu\n",gl->computestart);
     printf("COMPUTEEND = %lu\n",gl->computeend);
-    printf("COMPUTETIME (after initialization) = %lu\n",gl->computeend-gl->computestart);
+    */
+    printf("%lu\n",gl->computeend-gl->computestart);
+    /*
     printf("Measured Time (2nd timestep onward) = %lu\n",gl->tracktime);
     printf("Intramolecular time only (2nd timestep onward) = %lu\n",gl->intratime);
     printf("Intermolecular time only (2nd timestep onward) = %lu\n",gl->intertime);
     printf("Other time (2nd timestep onward) = %lu\n",gl->tracktime - gl->intratime - gl->intertime);
 
     printf("\nExited Happily with XTT = %g (note: XTT value is garbage if NPRINT > NSTEP)\n", XTT);
-
+    */
     MAIN_END;
 } /* main.c */
 

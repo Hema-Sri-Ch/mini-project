@@ -125,10 +125,11 @@ void Partition(SMatrix M, long parts, long *T, long *assigned_ops, long *domain,
       maxd = ops;
   }
   ave = domain_ops/(double) parts;
-
+  /*
   printf("Divide for %ld P, %ld domains, ", parts, proc_domains[parts]);
   printf("%.2f of work static, ", domain_ops/work_tree[M.n]);
   printf("%.2f eff, (%.2f overall)\n", ave/maxd, work_tree[M.n]/maxo/parts);
+  */
 }
 
 

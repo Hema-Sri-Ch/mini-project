@@ -114,10 +114,11 @@ void Amalgamate2(long join, SMatrix M, long *T, long *nz, long *node, long *doma
   ComputeWorkTree(M, nz, work_tree);
 
   supers_after = CountSupers(M.n, node);
-
+  /*
   printf("%ld/%ld supers before/after\n", supers_before, supers_after);
   printf("%.0f/%.0f (%.2f) ops before/after amalgamation\n",
 	 g_ops_before, work_tree[M.n], work_tree[M.n]/(double) g_ops_before);
+   */
   if (ops_added != work_tree[M.n]-g_ops_before)
     printf("Model says %ld ops added, really %.0f\n", ops_added,
 	   work_tree[M.n]-g_ops_before);

@@ -204,6 +204,7 @@ int main(int argc, char *argv[])
    MAIN_INITENV(,60000000)
 
    jm = im;
+   /*
    printf("\n");
    printf("Ocean simulation with W-cycle multigrid solver\n");
    printf("    Processors                         : %1ld\n",nprocs);
@@ -212,7 +213,7 @@ int main(int argc, char *argv[])
    printf("    Time between relaxations (seconds) : %0.0f\n",dtau);
    printf("    Error tolerance                    : %0.7g\n",tolerance);
    printf("\n");
-
+  */
    xprocs = 0;
    yprocs = 0;
    procsqrt = sqrt((double) nprocs);
@@ -477,13 +478,13 @@ int main(int argc, char *argv[])
    WAIT_FOR_END(nprocs);
    SPLASH4_ROI_END();
    CLOCK(computeend)
-
+  /*
    printf("\n");
    printf("                       PROCESS STATISTICS\n");
    printf("                  Total          Multigrid         Multigrid\n");
    printf(" Proc             Time             Time            Fraction\n");
    printf("    0   %15.0f    %15.0f        %10.3f\n", gp[0].total_time,gp[0].multi_time, gp[0].multi_time/gp[0].total_time);
-
+  */
    if (do_stats) {
      min_total = max_total = avg_total = gp[0].total_time;
      min_multi = max_multi = avg_multi = gp[0].multi_time;
@@ -521,18 +522,21 @@ int main(int argc, char *argv[])
      printf("  Min   %15.0f    %15.0f        %10.3f\n", min_total,min_multi,min_frac);
      printf("  Max   %15.0f    %15.0f        %10.3f\n", max_total,max_multi,max_frac);
    }
-   printf("\n");
+   // printf("\n");
 
    global->starttime = start;
+   /*
    printf("                       TIMING INFORMATION\n");
    printf("Start time                        : %16lu\n", global->starttime);
    printf("Initialization finish time        : %16lu\n", global->trackstart);
    printf("Overall finish time               : %16lu\n", computeend);
-   printf("Total time with initialization    : %16lu\n", computeend-global->starttime);
+   */
+   printf("%lu\n", computeend-global->starttime);
+   /*
    printf("Total time without initialization : %16lu\n", computeend-global->trackstart);
    printf("    (excludes first timestep)\n");
    printf("\n");
-
+  */
    MAIN_END
 }
 

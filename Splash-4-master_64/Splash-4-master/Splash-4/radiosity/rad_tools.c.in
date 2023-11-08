@@ -86,18 +86,21 @@ void print_statistics(FILE *fd, long process_id)
     many_interaction.area  = 0 ;
 
     foreach_patch_in_bsp( get_patch_stat,  0, 0 ) ;
-
+    /*
     fprintf( fd, "Rasiosity Statistics\n\n" ) ;
 
     fprintf( fd, "    Histogram of interactions/elem\n" ) ;
     fprintf( fd, "\t Interactions  Occurrence\n" ) ;
     fprintf( fd, "\t -------------------------------\n" ) ;
+    */
     if( many_interaction.count > 0 )
         {
+            /*
             fprintf( fd, "\t (Over %d)      %ld (%f)\n",
                     MAX_INTERACTION_PER_ELEMENT,
                     many_interaction.count,
                     many_interaction.area / many_interaction.count ) ;
+            */
         }
     for( i = MAX_INTERACTION_PER_ELEMENT ;
         elem_interaction[i].count == 0 ; i-- ) ;
@@ -105,7 +108,7 @@ void print_statistics(FILE *fd, long process_id)
         {
             if( elem_interaction[i].count == 0 )
                 continue ;
-
+            /*
             if( elem_interaction[i].count == 0 )
                 fprintf( fd, "\t    %ld          %ld (---)\n",
                         i, elem_interaction[i].count ) ;
@@ -114,13 +117,15 @@ void print_statistics(FILE *fd, long process_id)
                 fprintf( fd, "\t    %ld          %ld (%f)\n",
                         i, elem_interaction[i].count,
                         elem_interaction[i].area / elem_interaction[i].count);
+            */
         }
 
-    fprintf( fd, "    Configurations\n" ) ;
+    // fprintf( fd, "    Configurations\n" ) ;
 #if PATCH_ASSIGNMENT == PATCH_ASSIGNMENT_COSTBASED
     fprintf( fd, "\tPatch assignment: Costbased\n" ) ;
     fprintf( fd, "\tUsing non-greedy cost-based algorithm\n") ;
 #endif
+/*
 #if PATCH_ASSIGNMENT == PATCH_ASSIGNMENT_STATIC
     fprintf( fd, "\tPatch assignment: Static equal number\n" ) ;
 #endif
@@ -171,6 +176,7 @@ void print_statistics(FILE *fd, long process_id)
             total_equiv_elements ) ;
     fprintf( fd, "\tElem(hierarchical)/Elem(uniform): %.2f%%\n",
             (float)total_elements / (float)total_equiv_elements * 100.0 ) ;
+*/
 }
 
 
@@ -424,10 +430,10 @@ void print_running_time(long process_id)
     if( time_diff1 < 0 )
     time_diff1 += CLOCK_MAX_VAL ;
 
-    printf( "\tOverall start time\t%20lu\n", time_rad_start);
-    printf( "\tOverall end time\t%20lu\n", time_rad_end);
-    printf( "\tTotal time with initialization\t%20lu\n", time_diff);
-    printf( "\tTotal time without initialization\t%20lu\n", time_diff1);
+    // printf( "\tOverall start time\t%20lu\n", time_rad_start);
+    // printf( "\tOverall end time\t%20lu\n", time_rad_end);
+    printf( "%lu\n", time_diff);
+    //printf( "\tTotal time without initialization\t%20lu\n", time_diff1);
 }
 
 

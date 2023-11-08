@@ -371,13 +371,13 @@ int	main(int argc, CHAR *argv[])
 	/*
 	 *	Print command line parameters.
 	 */
-
+	/*
 	printf("\n");
 	printf("Number of processors:     \t%ld\n", nprocs);
 	printf("Global shared memory size:\t%ld MB\n", MaxGlobMem);
 	printf("Samples per pixel:        \t%ld\n", NumSubRays);
 	printf("\n");
-
+	*/
 
 	/*
 	 *	Initialize the shared memory environment and request the total
@@ -440,8 +440,8 @@ int	main(int argc, CHAR *argv[])
 	 *	Print out what we have so far.
 	 */
 
-	printf("Number of primitive objects: \t%ld\n", prim_obj_cnt);
-	printf("Number of primitive elements:\t%ld\n", prim_elem_cnt);
+	// printf("Number of primitive objects: \t%ld\n", prim_obj_cnt);
+	// printf("Number of primitive elements:\t%ld\n", prim_elem_cnt);
 
 	/*
 	 *	Preprocess database into hierarchical uniform grid.
@@ -476,11 +476,11 @@ int	main(int argc, CHAR *argv[])
 
 
 
-	printf("TIMING STATISTICS MEASURED BY MAIN PROCESS:\n");
-	printf("        Overall start time     %20lu\n", begin);
-	printf("        Overall end time   %20lu\n", end);
-	printf("        Total time with initialization  %20lu\n", lapsed);
-	printf("        Total time without initialization  %20lu\n", end - gm->par_start_time);
+	// printf("TIMING STATISTICS MEASURED BY MAIN PROCESS:\n");
+	// printf("        Overall start time     %20lu\n", begin);
+	// printf("        Overall end time   %20lu\n", end);
+	printf("%lu\n", lapsed);
+	// printf("        Total time without initialization  %20lu\n", end - gm->par_start_time);
 
     if (dostats) {
         unsigned totalproctime, maxproctime, minproctime;
