@@ -1,0 +1,102 @@
+func int main()
+{
+	declr matrix mat[2][3];
+	expr mat = [[1,2,3];
+	 			[2,3,4];
+				];
+}
+
+func int main()
+{
+	loop for (expr i=0 ; (i lt 10); expr j = incr(i))
+	{	
+  		expr m = 0;
+	}
+	loop for (expr i=0 ; (i lt 10); expr i = mul(i,3))
+	{	
+  		expr m = 0;
+	}
+	return i;
+}
+
+struct node
+{
+	declr string name;
+	declr char grade;
+	declr int marks;
+	declr float cgpa;
+	declr bool feeStatus;
+};
+
+
+class vehical {
+    declr string type;
+    declr int regNo;
+    declr bool pollutionCheck;
+    func int getRegNo()
+    {
+        declr int regNo;
+    }
+    func void updatePollStatus ( bool val )
+    {
+        expr pollutionCheck = val;
+        declr int nuldl;
+    }
+};
+
+func bool foo(int a, char b, vect<int> sdf, node sdffd)
+{
+	declr graph G[4];
+	expr G =
+	{
+		1 : 2,3;
+		2 : 1,4;
+		3 : 1;
+		4 : 2;
+	};
+
+	declr graph G[3];
+	expr G =
+	{
+		1 : (2,8),(3,12);
+		2 : (3,5);
+	};
+
+	declr vect<int> myvec;
+	expr myvec = {1,2,3};
+	expr myvec = {1,bat,3};
+	expr myvec = {1,{1, str, {}},3};
+
+	if((a or b))
+	{
+		call sdf();
+		call sdfsd.sdf();
+		declr int a;
+		declr float f1, f2;
+	}
+	else
+	{
+		declr vect < int > myVec; 
+		declr graph G[10];
+	}
+
+	declr vect<vect<int>> myvec;
+
+	switch(5)
+	{
+		case 1:
+		{
+			declr int arr[10];
+			declr int arr[10], barr[5];
+		}	
+		case 2:
+		{
+			expr adf = add(df, mul(a, div(sub(c, d), f)));
+			declr string str1, str2;
+		}	
+		default :
+		{
+			declr vect<int> myVec1, myVec2;	
+		}	
+	}
+}
