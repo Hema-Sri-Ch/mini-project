@@ -1,0 +1,3 @@
+- **data32.csv**: This file consists the data on time colleted in XU4 board
+- **data64.csv**: This file consists the data on time collected in N2L board
+- **Visualize.ipynb**: This file generates the plots on the above .csv files

@@ -1,0 +1,2 @@
+- ** This folder contains the data of powers extracted from raw powers data**
+- **Visualize.ipynb**: This file generates the analysis plots on the data of powers extracted

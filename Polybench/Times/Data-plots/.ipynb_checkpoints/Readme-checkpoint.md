@@ -1,0 +1,3 @@
+- data.csv: This file consists the time taken by each core of XU4 for all polybench applications
+- data2.csv: This file consists the time taken by each core of N2L for all polybench applications
+- Visualise.ipynb: This file generates the plots from the data collected on times

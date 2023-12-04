@@ -1,0 +1,6 @@
+- ** This folder consists of the powers data extracted from raw data provided in other folder**
+- ** Visualize.ipynb:** This file generates plots from the data on powers
+- ** Generated plots: **
+	- Plots on average powers for odroid N2L board and XU4 board
+	- Plots on energies for odroid N2L and XU4 boards
+	- Plots on ratios of powers and energies for both boards

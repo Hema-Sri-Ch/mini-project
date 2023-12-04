@@ -1,4 +1,4 @@
-aarch64-linux-gnu-gcc -O3 -I utilities -I linear-algebra/kernels/atax utilities/polybench.c linear-algebra/kernels/atax/atax.c -DPOLYBENCH_TIME -o ./Outfiles2/atax_time
+ aarch64-linux-gnu-gcc -O3 -I utilities -I linear-algebra/kernels/atax utilities/polybench.c linear-algebra/kernels/atax/atax.c -DPOLYBENCH_TIME -o ./Outfiles2/atax_time
 aarch64-linux-gnu-gcc -O3 -I utilities -I linear-algebra/kernels/bicg utilities/polybench.c linear-algebra/kernels/bicg/bicg.c -DPOLYBENCH_TIME -o ./Outfiles2/bicg_time
 aarch64-linux-gnu-gcc -O3 -I utilities -I linear-algebra/kernels/doitgen utilities/polybench.c linear-algebra/kernels/doitgen/doitgen.c -DPOLYBENCH_TIME -o ./Outfiles2/doitgen_time
 aarch64-linux-gnu-gcc -O3 -I utilities -I linear-algebra/kernels/mvt utilities/polybench.c linear-algebra/kernels/mvt/mvt.c -DPOLYBENCH_TIME -o ./Outfiles2/mvt_time
